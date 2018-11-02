@@ -1,4 +1,4 @@
 [submodule "reveal.js"]
-	path = reveal.js
+	path = reveal
 	url = https://github.com/pshriwise/reveal.js
 	branch = UWTheme
