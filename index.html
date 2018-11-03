@@ -43,6 +43,51 @@
                             <img src="images/cad_screenshot.png" height="500px" style="box-shadow: 3px 3px 2px #000"></img>
                             <p style="font-size:18px">(Screenshot of Trelis GUI)</p>
                           </section>
+
+                          <section>
+                            <h2 style="text-align:left"> DAGMC Workflow </h2>
+                            <table class="uwtable" style="vertical-align:middle">
+			      <tbody>
+				<tr>
+				  <td></td>
+				  <td  ></td>
+				  <td style="vertical-align:bottom"> surface faceting </td>
+				  <td  ></td>			    
+				  <td style="border-top: 2px dashed black;border-left: 2px dashed black" >particle tracking</td>
+				  <td style="border-top: 2px dashed black"></td>			    
+				  <td  style="border-right: 2px dashed black;border-top: 2px dashed black">
+				    <span>MCNP5<a href="#bib1"><small style="vertical-align:bottom">[15]</small></a></span>
+				  </td>
+				</tr>
+				<tr style="height:100px">
+				  <td class="redBlock" ><p>CAD</p>
+				    <p>
+				      (Cubit/Trelis)
+				      <a href="#bib"><small style="vertical-align:bottom;color:white">[7]</small></a>
+				      <a href="#bib"><small style="vertical-align:bottom;color:white">[5]</small></a>
+				    </p>
+				  </td>
+				  <td style="vertical-align:middle" > &#8594; </td>			    
+				  <td class="redBlock" ><p>preprocessing</p><p>(MOAB)</p></td>
+				  <td style="vertical-align:middle" > &#8594; </td>			    			    
+				  <td class="redBlock"  style="border-left: 2px dashed black"> <p>DAGMC</p><p>(MOAB)</p></td>
+				  <td style="vertical-align:middle" > <p>&#8594;</p> <p>&#8592;</p> </td>			    			    
+				  <td class="redBlock"  style="border-right: 2px dashed black"> Monte Carlo </td>
+				</tr>
+				<tr>
+				  <td > geometric design </td>
+				  <td></td>
+				  <td > make_watertight <a href="#bib"><small style="vertical-align:bottom">[11]</small></a></td>
+                                  <td></td>
+                                  <td style="border-left: 2px dashed black;border-bottom: 2px dashed black"> ray tracing </td>
+                                  <td style="border-bottom: 2px dashed black"></td>
+                                  <td style="border-right: 2px dashed black;border-bottom: 2px dashed black"> physics </td>			      
+                                </tr>
+			      </tbody>
+			    </table>
+                            <p class="stretch"></p>
+		          </section>
+                          
                           
 			</div>
 		</div>
@@ -57,6 +102,7 @@
 			Reveal.initialize({
                         width: '80%',
                         history: true,
+                        controls: false,
 			dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
