@@ -25,74 +25,133 @@
 		<div class="reveal">
 		  <div class="slides">
 
-			    <section class="title-slide" id="title-slide" data-state="title-slide">
-                            <h2>Geometry Query Optimizations in DAGMC</h2>
-                            <h3 style="color:gray">Patrick C. Shriwise</h3>
-                            <h4 style="color:black">University of Wisconsin - Madison</h4>
-                            <a style="visibility:false" onclick="document.getElementById('slideNumbers').setAttribute(false); return false;"></a>
-                          </section>
+		      <section class="title-slide" id="title-slide" data-state="title-slide">
+                          <h2>Geometry Query Optimizations in DAGMC</h2>
+                          <h3 style="color:gray">Patrick C. Shriwise</h3>
+                          <h4 style="color:black">University of Wisconsin - Madison</h4>
+                          <p>
+			      <span id="displayDate">empty text</span>
+		          </p>
+                          
+                      </section>
 
-			    <section>
-                            <h3 class="stretch" style="text-align:left"> DAGMC: Direct Accelerated Monte Carlo</h3>
-                            <p class="stretch"></p>
-                            <img src="images/cad_screenshot.png" height="500" width="900" style="box-shadow: 3px 3px 2px #000"></img>
-                            <p style="font-size:18px">(Screenshot from Trelis GUI)</p>
-                          </section>
+		      <section id="cad-image">
+                          <h3 class="stretch" style="text-align:left">DAGMC: Direct Accelerated Monte Carlo</h3>
 
+                          <img src="images/cad_screenshot.png" height="500" width="900" style="box-shadow: 3px 3px 2px #000"></img>
+                          <p style="font-size:18px">(Screenshot from Trelis GUI)</p>
+                      </section>
 
-                <section>
-                            <h3 style="text-align:left"> DAGMC Workflow </h3>
-                            <table class="uwtable" style="vertical-align:middle">
+                      <section id="dagmc-workflow">
+                          <h3 style="text-align:left"> DAGMC Workflow </h3>
+                          <table class="uwtable" style="vertical-align:middle">
 			      <tbody>
-                                <tr>
-                                  <td></td><td></td><td></td><td></td><td></td>
-                                  <td>Analysis</td>
-                                  <td></td>
-				<tr>
-				  <td></td>
-				  <td></td>
-				  <td></td>
-				  <td></td>
-				  <td style="border-top: 2px dashed black;border-left: 2px dashed black"></td>
-				  <td style="border-top: 2px dashed black"></td>
-				  <td  style="border-right: 2px dashed black;border-top: 2px dashed black">
-				  </td>
-				</tr>
-				<tr style="height:100px">
-				  <td class="redBlock" width="150">
-                                    <p>Solid Model</p>
-                                    <p>(CAD)</p>
-				  </td>
-				  <td style="vertical-align:middle" > &#8594; </td>
-				  <td class="redBlock" >
-                                    <p>Tessellation & Sealing</p>
-                                    
-                                  </td>
-				  <td style="vertical-align:middle" > &#8594; </td>
-				  <td class="redBlock"  width="150" style="border-left: 2px dashed black">
-                                    <p>DAGMC</p>
-                                  </td>
-				  <td style="vertical-align:middle" > <p>&#8594;</p> <p>&#8592;</p> </td>
-				  <td class="redBlock" width="150" style="border-right: 2px dashed black"> Monte Carlo </td>
-				</tr>
-				<tr>
-				  <td></td>
-				  <td></td>
-				  <td></td>
-                  <td></td>
-                  <td style="border-left: 2px dashed black;border-bottom: 2px dashed black"></td>
-                  <td style="border-bottom: 2px dashed black"></td>
-                  <td style="border-right: 2px dashed black;border-bottom: 2px dashed black"></td>
-                </tr>
+                                  <tr>
+                                      <td></td><td></td><td></td><td></td><td></td>
+                                      <td>Analysis</td>
+                                      <td></td>
+                                  </tr>
+				  <tr>
+				      <td></td>
+				      <td></td>
+				      <td></td>
+				      <td></td>
+				      <td style="border-top: 2px dashed black;border-left: 2px dashed black"></td>
+				      <td style="border-top: 2px dashed black"></td>
+				      <td  style="border-right: 2px dashed black;border-top: 2px dashed black">
+				      </td>
+				  </tr>
+				  <tr style="height:100px">
+				      <td class="redBlock" width="200">
+                                          <p>Solid Model</p>
+                                          <p>(CAD)</p>
+				      </td>
+				      <td style="vertical-align:middle" > &#8594; </td>
+				      <td class="redBlock" >
+                                          <p>Tessellation & Sealing</p>
+                                          
+                                      </td>
+				      <td style="vertical-align:middle" > &#8594; </td>
+				      <td class="redBlock"  width="200" style="border-left: 2px dashed black">
+                                          <p>DAGMC</p>
+                                      </td>
+				      <td style="vertical-align:middle" > <p>&#8594;</p> <p>&#8592;</p> </td>
+				      <td class="redBlock" width="200" style="border-right: 2px dashed black"> Monte Carlo </td>
+				  </tr>
+				  <tr>
+				      <td></td>
+				      <td></td>
+				      <td></td>
+                                      <td></td>
+                                      <td style="border-left: 2px dashed black;border-bottom: 2px dashed black"></td>
+                                      <td style="border-bottom: 2px dashed black"></td>
+                                      <td style="border-right: 2px dashed black;border-bottom: 2px dashed black"></td>
+                                  </tr>
 			      </tbody>
-			    </table>
-                            <p class="stretch"></p>
-		          </section>
-
-
-			</div>
+			  </table>
+                          <table class="uwtable">
+                              <tbody>
+                                  <tr>
+                                      <td width="200">
+                                          <img class="fragment fade-in" src="images/fng_cad.png" width="350"></img>
+                                      </td>
+                                      <td>
+                                          
+                                      </td>
+                                      <td>
+                                          <img class="fragment fade-in" src="images/fng_cad.png" width="350"></img>
+                                      </td>
+                                      <td></td>
+                                      <td width="200">
+                                          <div class="fragment fade-in">
+                                              <p style="vertical-align:top">
+                                                  Available in:
+                                              </p>
+                                              <ul style="padding-left: 5em">
+                                                  <li>MCNP5/6</li>
+                                                  <li>FLUKA</li>
+                                                  <li>GEANT4</li>
+                                                  <li>Tripoli</li>
+                                                  <li>Shift</li>
+                                                  <li>OpenMC</li>
+                                              </ul>
+                                          </div>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          <p class="stretch"></p>
+		      </section>
+                      
+                      <section id="dagmc-pros-cons">
+                          <h3 style="text-align:left">Effects on Modeling</h3>
+                          <table class="uwtable">
+                              <tbody>
+                                  <thead height="100">
+                                      <td style="border-bottom: 2px solid black"><b>Benefits</b></td>
+                                      <td style="border-bottom: 2px solid black"><b>Drawbacks</b></td>
+                                  </thead>
+                                  <tr>
+                                      <td>
+                                          <ul>
+                                              <li>Human efficiency</li>
+                                              <li>Higher geometric fidelity</li>
+                                          </ul>
+                                      </td>
+                                      <td>
+                                          <ul>
+                                              <li>Increased simulation time</li>
+                                          </ul>
+                                      </td>
+                                  </tr>
+                              </tbod>
+                          </table>
+                          <p class="stretch"></p>
+                      </section>
+                          
+		  </div>
 		</div>
-
+                
 		<script src="reveal/lib/js/head.min.js"></script>
 		<script src="reveal/js/reveal.js"></script>
 
@@ -100,7 +159,8 @@
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
+		 Reveal.initialize({
+                        width: '70%',
                         history: true,
                         controls: false,
 			dependencies: [
@@ -111,6 +171,11 @@
 				]
 			});
                         Reveal.configure({ slideNumber: 'c' });
+		</script>
+                <script type="text/javascript">
+		  var newDate = new Date();
+		  newDate.setDate(newDate.getDate());
+		  document.getElementById('displayDate').innerHTML = (newDate.getMonth() + 1) + '/' + newDate.getDate() + '/' + newDate.getFullYear();
 		</script>
 	</body>
 </html>
