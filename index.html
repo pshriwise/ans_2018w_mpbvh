@@ -17,7 +17,7 @@
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 	</head>
@@ -32,14 +32,16 @@
                           <p>
 			      <span id="displayDate">empty text</span>
 		          </p>
-                          
+
                       </section>
 
 		      <section id="cad-image">
-                          <h3 class="stretch" style="text-align:left">DAGMC: Direct Accelerated Monte Carlo</h3>
-
-                          <img src="images/cad_screenshot.png" height="500" width="900" style="box-shadow: 3px 3px 2px #000"></img>
-                          <p style="font-size:18px">(Screenshot from Trelis GUI)</p>
+                        <h3 class="stretch">DAGMC</h3>
+                        <br></br>
+                        <h4 class="stretch">Direct Accelerated Monte Carlo</h4>
+                        <img src="images/cad_screenshot.png" height="400" width="700" style="box-shadow: 3px 3px 2px #000"></img>
+                        <p style="font-size:18px">(Screenshot from Trelis GUI)</p>
+                        <p class="stretch"></p>
                       </section>
 
                       <section id="dagmc-workflow">
@@ -71,18 +73,17 @@
 				  </tr>
 				  <tr style="height:100px">
 				      <td class="redBlock" width="250">
-                                          <p>Solid Model</p>
-                                          <p>(CAD)</p>
+                                          <p>CAD Model</p>
 				      </td>
 				      <td style="vertical-align:middle" > &#8594; </td>
 				      <td class="redBlock" >
                                           <p>Tessellation & Sealing</p>
                                       </td>
-                                      <td style="vertical-align:middle" > &#8594; </td>                                      
+                                      <td style="vertical-align:middle" > &#8594; </td>
                                       <td class="redBlock">
                                         <p>Material/Tally Definitions</p>
                                       </td>
-                                    
+
 				      <td style="vertical-align:middle" > &#8594; </td>
 				      <td class="redBlock"  width="250" style="border-left: 2px dashed black">
                                           <p>DAGMC</p>
@@ -138,11 +139,11 @@
                           <table class="uwtable">
                               <tbody>
                                   <tr>
-                                      <td width="200">
+                                      <td>
                                           <img class="fragment fade-in" src="images/fng_cad.png" width="350"></img>
                                       </td>
                                       <td>
-                                          
+
                                       </td>
                                       <td>
                                           <img class="fragment fade-in" src="images/fng_faceted.png" width="350"></img>
@@ -163,14 +164,14 @@
                           </table>
                           <p class="stretch"></p>
 		      </section>
-                      
+
                       <section id="dagmc-pros-cons">
                           <h3 style="text-align:left">DAGMC Effects on Modeling</h3>
-                          <table class="uwtable">
+                          <table>
                               <tbody>
                                   <thead height="100">
-                                      <td style="border-bottom: 2px solid black"><b>Benefits</b></td>
-                                      <td style="border-bottom: 2px solid black"><b>Drawbacks</b></td>
+                                      <td style="border-bottom: 2px solid black;text-align:center"><b>Benefits</b></td>
+                                      <td style="border-bottom: 2px solid black;text-align:center"><b>Drawbacks</b></td>
                                   </thead>
                                   <tr>
                                       <td>
@@ -183,18 +184,48 @@
                                       </td>
                                       <td style="vertical-align:top" class="fragment highlight-blue">
                                           <ul>
-                                              <li>Increased simulation time</li>
+                                              <li>Increased simulation times</li>
                                           </ul>
                                       </td>
                                   </tr>
-                              </tbod>
+                              </tbody>
                           </table>
                           <p class="stretch"></p>
                       </section>
-                          
+
+                      <section id="dagmc-curr-perf">
+                          <h3>DAGMC Performance:</h3>
+                          <h3>Comparison to Native Geometries</h3>
+                          <object align="top" width="900" height="800" data="plots/dagmc-current-performance.html"></object>
+                          <p class="stretch"><strong>2-10x slower than native geometry</strong></p>
+                      </section>
+                      
+                      <section id="geom-query-accel">
+                          <h2> Geometry Query Accelerations </h2>
+                      </section>
+
+                      <section>
+                          <h3 style="text-align:left">Ray Tracing</h3>
+                          <h4 style="text-align:left">The Bounding Volume Hierarchy (BVH)</h4>
+                          <br>
+                          <table class="uwtable">
+                              <tbody>
+                                  <tr>
+                                      <td>
+                                          <img src="images/binary_graph.png" alt="Binary Graph"></img>
+                                      </td>
+                                      <td>
+                                          <img src="images/bvh_2d_ex.png" alt="2D BVH"></img>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          <p class="stretch"></p>
+                      </section>
+                      
 		  </div>
 		</div>
-                
+
 		<script src="reveal/lib/js/head.min.js"></script>
 		<script src="reveal/js/reveal.js"></script>
 
