@@ -182,7 +182,7 @@
                                               <li>Shared analysis domain</li>
                                           </ul>
                                       </td>
-                                      <td style="vertical-align:top" class="fragment highlight-blue">
+                                      <td style="vertical-align:top" class="fragment highlight-red">
                                           <ul>
                                               <li>Increased simulation times</li>
                                           </ul>
@@ -193,11 +193,17 @@
                           <p class="stretch"></p>
                       </section>
 
+                      <section id="dagmc-perf-models">
+                        <h4 style="text-align:left"> DAGMC Performance Benchmarking </h4>
+                        <p class="stretch"></p>
+                        <img src="images/dagmc-perf-models.svg" height="450">
+                        <p class="stretch"></p>
+                      </section>
+                      
                       <section id="dagmc-curr-perf">
-                          <h3>DAGMC Performance:</h3>
-                          <h4>Comparison to Native Geometries</h4>
-                          <img src="images/dagmc-current-perf.svg" height="450"></img>
-                          <p class="stretch"><strong>2-10x slower than native geometry</strong></p>
+                          <h4 style="text-align:left"> DAGMC Performance Benchmarking </h4>
+                        <img src="images/dagmc-current-perf.svg" height="450"></img>
+                        <p class="stretch"><strong>2-10x slower than native geometry</strong></p>
                       </section>
                       
                       <section id="geom-query-accel">
@@ -207,20 +213,16 @@
                       <section>
                           <h3 style="text-align:left">Ray Tracing</h3>
                           <h4 style="text-align:left">The Bounding Volume Hierarchy (BVH)</h4>
+                          <p>DAGMC employs a BVH using Oriented Bounding Boxes (OBBs) in the Mesh Oriented daABase (MOAB)</p>
                           <br>
-                          <table class="uwtable">
-                              <tbody>
-                                  <tr>
-                                      <td>
-                                          <img src="images/binary_graph.png" alt="Binary Graph"></img>
-                                      </td>
-                                      <td>
-                                          <img src="images/bvh_2d_ex.png" alt="2D BVH"></img>
-                                      </td>
-                                  </tr>
-                              </tbody>
-                          </table>
-                          <p class="stretch"></p>
+                          <img src="images/bvh_ex_obbs.svg">
+                          <p class="stretch fragment fade-in">...yet runtimes are still many times slower than native geometry.</p>
+                      </section>
+
+                      <section id="emdag-intro">
+                        <h3 style="text-align:left">EmDAG:</h3>
+                        <h4 style="text-align:left">Embree powering the DAGMC toolkit</h4>
+                        <p class="stretch"></p>
                       </section>
                       
 		  </div>
