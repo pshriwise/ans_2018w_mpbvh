@@ -20,6 +20,15 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+                
+                <script type="text/x-mathjax-config">
+                  MathJax.Hub.Config({
+                  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+                  });
+                </script>
+                <script type="text/javascript" async
+                        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+                </script>
 	</head>
 	<body>
 		<div class="reveal">
@@ -218,6 +227,20 @@
                           <p class="stretch fragment fade-in">...yet runtimes are still many times slower than native geometry.</p>
                       </section>
 
+                      <section id="dagmc-scale">
+                        <h4 style="text-align:left">DAGMC Operations</h4>
+                        <p class="stretch"></p>
+                        <p style="text-align:left">Common scenario:</p>
+                        <ul>
+                          <li> OBB Hierarchy with 32 levels (~100M OBBs) </li>
+                          <li> 10M triangles </li>
+                          <li> Averaging 50 scatters per history </li>
+                        </ul>
+                        <br>
+                        <p>$log_{2}(10^{7}) \, \times \, 10^{7} \, \times \, 50 \, \approx \, 11.6B$ box intersections</p>
+                        <p class="stretch"></p>
+                      </section>
+                      
                       <section id="emdag-intro">
                         <h3 style="text-align:left">EmDAG:</h3>
                         <h4 style="text-align:left">Embree powering the DAGMC toolkit</h4>
